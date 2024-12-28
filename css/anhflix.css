@@ -1,7 +1,7 @@
 /* styles.css */
 body {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #1c1c1c;
@@ -22,6 +22,7 @@ body {
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
 

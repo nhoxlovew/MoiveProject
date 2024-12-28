@@ -7,6 +7,7 @@
     <title>Web Xem Phim</title>
     <link rel="stylesheet" href="./css/anhflix.css">
     <link rel="stylesheet" href="./css/filmcard.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
             <div class="search-login">
                 <div class="search-box">
                     <input type="text" placeholder="Tìm kiếm phim...">
-                    <button>🔍</button>z
+                    <button>🔍</button>
                 </div>
                 <div class="auth">
                     <a href="#" class="login">Đăng nhập</a>
@@ -38,7 +39,19 @@
 
     <main>
         <div class="main-card">
-            <div class="movie-card">
+            <div class="movie-card-container">
+                <div class="card">
+                    <img class="img-card" src="./image/image.png" alt="Movie Title">
+                    <div class="content">
+                        <span>Movie Title</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="img-card" src="./image/image.png" alt="Movie Title">
+                    <div class="content">
+                        <span>Movie Title</span>
+                    </div>
+                </div>
                 <div class="card">
                     <img class="img-card" src="./image/image.png" alt="Movie Title">
                     <div class="content">
@@ -59,6 +72,7 @@
                 </div>
             </div>
         </div>
+        
         <script src="./js/anhflix.js"></script>
     </main>
 

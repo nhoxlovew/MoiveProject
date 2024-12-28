@@ -2,11 +2,12 @@
     width: 100%;
 }
 
-.main-card .movie-card {
+.main-card .movie-card-container {
     width: 100%;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
 }
 
 /* .img-card {
@@ -35,6 +36,7 @@
     position: relative;
 
     width: 300px;
+    height: 450px;
 
     margin: 10px;
 
@@ -54,10 +56,14 @@
 }
 
 .img-card {
-    width: 100%;
+    width:100%;
     object-fit: cover;
+    height: 480px;
+    
+    /* object-position: center; */
     /* Keep image proportions */
     transition: opacity 0.3s ease;
+    
     /* Smooth fade effect */
 }
 
@@ -67,13 +73,14 @@
 }
 
 .content {
+    justify-items: center;
     position: absolute;
     bottom: 0px;
     color: white;
     font-size: 20px;
     font-weight: bold;
     opacity: 1;
-    transform: translateY(20px);
+    transform: translateY(50px);
     transition: opacity 0.3s ease,transform 0.3s ease-in-out;
 }
 
@@ -82,3 +89,5 @@
     transform: translateY(-20px);
     /* Show content on hover */
 }
+
+

@@ -24,6 +24,7 @@ async function loadMovies(page = 1) {
                     <div class="content">
                         <span>${item.name}</span>
                     </div>
+                    <div class="play-button"></div>
                 </div>
             `).join('');
 

@@ -12,28 +12,6 @@
     gap: 10px;
 }
 
-/* .img-card {
-    margin: 10px;
-    width: 295px;
-    
-}
-
-.content {
-    position: absolute;
-    justify-items: center;
-}
-
-.movie-card .card {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.img-card:hover{
-    
-    transition: all;
-} */
-
 .card {
     position: relative;
 
@@ -56,22 +34,12 @@
     width:100%;
     object-fit: cover;
     height: 480px;
-    
-    /* object-position: center; */
-    /* Keep image proportions */
     transition: opacity 0.3s ease;
     
-    /* Smooth fade effect */
-}
-
-.card:hover .img-card {
-    opacity: 0.4;
-    /* background: radial-gradient(#e66465, #9198e5); */
-    cursor: pointer;
 }
 
 .content {
-    justify-items: center;
+    
     position: absolute;
     bottom: 0px;
     color: white;
@@ -82,40 +50,48 @@
     transition: opacity 0.3s ease,transform 0.3s ease-in-out;
 }
 
+.card:hover .img-card {
+    opacity: 0.4;
+    transform: scale(1.05);
+    transition: transform 1.5s ease;
+    cursor: pointer;
+}
+
+
 .card:hover .content {
     opacity: 1;
     transform: translateY(-20px);
 }
 
 
-.pagination-controls {
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: #1c1c1c;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin: 20px 0;
+    font-size: 24px;
+    color: #ff9800;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 1.05s ease-out;
 }
 
-.pagination-controls button {
-    background-color: #ff9800;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
+.card:hover .play-button {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.pagination-controls button:disabled {
-    background-color: #555;
-    cursor: not-allowed;
+.play-button::after {
+    content: '▶';
+    font-size: 28px;
+    color: #5CC793;
 }
 
-.pagination-controls button:hover:not(:disabled) {
-    background-color: #e68900;
-}
 
-.pagination-controls span {
-    color: white;
-    font-size: 16px;
-}

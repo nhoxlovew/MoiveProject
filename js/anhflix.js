@@ -1,7 +1,8 @@
 const movieContainer = document.querySelector('.movie-card-container');
+const mainContainer = document.querySelector('.main-card');
+const summaryContainer = document.getElementById('movie-summary-container');
 const apiURL = "https://ophim1.com/danh-sach/phim-moi-cap-nhat?page=1";
-let currentPage = 1;
-let totalPages = 1;
+
 
 async function loadMovies(page = 1) {
     try {
@@ -12,7 +13,6 @@ async function loadMovies(page = 1) {
         console.log(data);
 
         const movies = data.items;
-        console.log(movies.name);
         const baseImageUrl = data.pathImage;
         totalPages = data.pagination.totalPages;
         currentPage = page
@@ -27,16 +27,10 @@ async function loadMovies(page = 1) {
                     <div class="play-button"></div>
                 </div>
             `).join('');
-
-        document.getElementById('prevBtn').disabled = page <= 1;
-        document.getElementById('nextBtn').disabled = page >= totalPages;
-        document.getElementById('pageInfo').textContent = `Page ${page} of ${totalPages}`;
     } catch (error) {
         console.error("Error loading movies:", error);
     }
 }
-
-
 loadMovies()
 
 
